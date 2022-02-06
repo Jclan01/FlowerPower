@@ -5,12 +5,11 @@ function reseter() {
     count++;
     var countDisp = document.getElementById("count");
     countDisp.innerHTML = count;
-    if (count == max_Time) {
+    if (count >= max_Time) {
         womantime();
         sad();
         score.innerHTML = "Game Over!"
-        clearInterval(inter);
-        setInterval(document.location.reload, 5000);
+        document.location.reload();
     }
 }
 
@@ -148,6 +147,7 @@ function womantime1() {
         happy();
     }
     womantime();
+    count = 0;
     clearInterval(inter);
     inter;
 }
@@ -158,6 +158,7 @@ function womantime2() {
         happy();
     }
     womantime();
+    count = 0;
     clearInterval(inter);
     inter;
 }
@@ -168,6 +169,7 @@ function womantime3() {
         happy();
     }
     womantime();
+    count = 0;
     clearInterval(inter);
     inter;
 }
@@ -178,6 +180,7 @@ function womantime4() {
         happy();
     }
     womantime();
+    count = 0;
     clearInterval(inter);
     inter;
 }
@@ -188,6 +191,7 @@ function womantime5() {
         happy();
     }
     womantime();
+    count = 0;
     clearInterval(inter);
     inter;
 }
