@@ -1,8 +1,8 @@
 body {
     padding-top: 30px;
-    font-family: Helvetica;
-    background-color: darkgreen;
+    font-family: Montserrat;
     width: 1000 px;
+    background-color: darkolivegreen;
     margin: auto;
     text-align: center;
 }
@@ -14,18 +14,45 @@ p {
     margin: 5px;
 }
 
+h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin: 5px;
+}
+
+#adventurer {
+    margin: auto;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#count {
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border: 5px solid;
+    border-radius: 10px;
+    background-color: white;
+    width: 200px;
+    height: 60px;
+}
+
 #title {
     margin: auto;
     text-align: center;
     padding-top: 20px;
-    margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 40px;
     border: 5px solid;
-    border: radius 10px;
+    border-radius: 10px;
     background-color: black;
     color: white;
     width: 400px;
-    height: 60px;
+    height: 100px;
 }
 
 #question {
@@ -33,9 +60,9 @@ p {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 20px;
+    font-size: 40px;
     border: 5px solid;
-    border: radius 10px;
+    border-radius: 10px;
     background-color: white;
     color: black;
     width: 400px;
@@ -55,66 +82,95 @@ p {
     height: 60px;
 }
 
+@keyframes scroll-anim {
+    100% {
+        background-position: 0 -100%;
+    }
+}
+
 .container {
-    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 32.6vw;
+    background: url('longMountainPic.jpg') repeat-y;
+    background-size: 100%;
+    animation: scroll-anim 60s linear infinite;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px;
 }
 
 #option1 {
-    flex: 2;
-    background-image: url("branch.png");
+    background-image: url('fullBranch.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 40px;
     padding-top: 40px;
-    font-size: 30 px;
+    font-size: 30px;
     color: white;
-    font-family: Helvetica;
+    font-family: Montserrat;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 #option2 {
-    flex: 2;
-    background-image: url("branch.png");
+    background-image: url('fullBranch.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 40px;
     padding-top: 40px;
-    font-size: 30 px;
+    font-size: 30px;
     color: white;
-    font-family: Helvetica;
+    font-family: Montserrat;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 #option3 {
-    flex: 2;
-    background-image: url("branch.png");
+    background-image: url('fullBranch.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 40px;
     padding-top: 40px;
-    font-size: 30 px;
+    font-size: 30px;
     color: white;
-    font-family: Helvetica;
+    font-family: Montserrat;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
 #option4 {
-    flex: 2;
-    background-image: url("branch.png");
+    background-image: url('fullBranch.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 40px;
     padding-top: 40px;
-    font-size: 30 px;
+    font-size: 30px;
     color: white;
-    font-family: Helvetica;
+    font-family: Montserrat;
+    grid-column-start: 4;
+    grid-column-end: 5;
 }
 
 #option5 {
-    flex: 2;
-    background-image: url("branch.png");
+    background-image: url('fullBranch.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 40px;
     padding-top: 40px;
-    font-size: 30 px;
+    font-size: 30px;
     color: white;
-    font-family: Helvetica;
+    font-family: Montserrat;
+    grid-column-start: 5;
+    grid-column-end: 6;
 }
