@@ -1,12 +1,12 @@
 var count = 0;
-var max_Time = 20;
+var max_Time = 10;
 
 function reseter() {
     count++;
     var countDisp = document.getElementById("count");
     countDisp.innerHTML = count;
     if (count >= max_Time) {
-        womantime();
+        flowertime();
         sad();
         score.innerHTML = "Game Over!"
         document.location.reload();
@@ -18,7 +18,7 @@ window.onload = function() {
     var name = prompt("What is your adventurer name?");
     var title = document.getElementById("title");
     title.innerHTML = name + " the Adventurer";
-    womantime();
+    flowertime();
     var inter = setInterval(reseter, 1000);
 }
 
@@ -33,7 +33,7 @@ var backImg = ["segBack/row-1-column-1.jpg", "segBack/row-2-column-1.jpg", "segB
 
 
 //type of problem: 0 is basic addition, 1 is basic multiplication, 2 is derivatives, 3 is integrals
-function womantime() {
+function flowertime() {
     var derivativeVals = [
         [a + "x", a, 1, 2 * a],
         [a, 0, 1, a],
@@ -141,56 +141,66 @@ function sad() {
 }
 
 
-function womantime1() {
+function flowertime1() {
     if (indexCorr == 0) {
         scoreVal++;
         happy();
+    } else {
+        sad();
     }
-    womantime();
+    flowertime();
     count = 0;
     clearInterval(inter);
     inter;
 }
 
-function womantime2() {
+function flowertime2() {
     if (indexCorr == 1) {
         scoreVal++;
         happy();
+    } else {
+        sad();
     }
-    womantime();
+    flowertime();
     count = 0;
     clearInterval(inter);
     inter;
 }
 
-function womantime3() {
+function flowertime3() {
     if (indexCorr == 2) {
         scoreVal++;
         happy();
+    } else {
+        sad();
     }
-    womantime();
+    flowertime();
     count = 0;
     clearInterval(inter);
     inter;
 }
 
-function womantime4() {
+function flowertime4() {
     if (indexCorr == 3) {
         scoreVal++;
         happy();
+    } else {
+        sad();
     }
-    womantime();
+    flowertime();
     count = 0;
     clearInterval(inter);
     inter;
 }
 
-function womantime5() {
+function flowertime5() {
     if (indexCorr == 4) {
         scoreVal++;
         happy();
+    } else {
+        sad();
     }
-    womantime();
+    flowertime();
     count = 0;
     clearInterval(inter);
     inter;
