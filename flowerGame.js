@@ -6,7 +6,6 @@ window.onload = function() {
 
 
 var adventurer = document.getElementById("adventurer");
-
 //type of problem: 0 is basic addition, 1 is basic multiplication, 2 is derivatives, 3 is integrals
 function womantime() {
     var optionArr = new Array(5);
@@ -30,6 +29,13 @@ function womantime() {
         valA = -10 + Math.floor(Math.random * 21);
         valB = -10 + Math.floor(Math.random * 21);
         question = valA + " * " + valB;
+        indexCorr = Math.floor(Math.random * 5);
+        optionArr[indexCorr] = valA * valB;
+        for (let i = 0; i < optionArr.length; i++) {
+            if (i != indexCorr) {
+                optionArr[i] = optionArr[indexCorr] + -100 + Math.floor(Math.random * 101);
+            }
+        }
     } else if (type == 2) {
         valA = 1 + Math.floor(Math.random * 10);
         valB = 1 + Math.floor(Math.random * 20);
