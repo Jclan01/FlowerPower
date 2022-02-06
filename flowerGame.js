@@ -50,15 +50,34 @@ function flowertime() {
 
     ];
 
+    var anti = [
+        [a, a + 'x + C', 'x + C', a],
+        ['x^' + n, "(1/" + (n + 1) + ')x^' + (n + 1) + ' + C', "(1/" + (n) + ')x^' + (n + 1) + ' + C', "(1/" + (n + 1) + ')x^' + (n) + ' + C'],
+        ['cosx', 'sinx + C', '-sinx + C', 'cosx + c'],
+        ['sinx', '-cosx + C', '-sinx + C', 'cosx + c'],
+        ['sec^2(x)', 'tanx + C', '(1/3)sec^3x + C', '-tanx + C'],
+        ['sec(x)tan(x)', "secx + C", 'tanx + c', 'cscx + C'],
+        ['csc(x)cot(x)', '-cscx + C', 'cscx + C', '-cotx + C'],
+        ['csc^2(x)', '-cotx + C', 'cotx + C', '(1/3)csc^3(x)'],
+        ['tanxdx', 'ln|secx| + C', 'ln(secx) + C', 'ln|tanx| + C'],
+        ['secx', 'ln|secx + tan x| + C', 'ln(secx + tanx) + C', 'ln|sec(x)tan(x) + C'],
+        ['cscx', 'ln|cscx - cotx| + C', 'ln(cscx - cotx) + C,', 'ln|csc(x)cot(x) + C'],
+        ['e^x', 'e^x', '(1/(x+1)) * e^(x+1)', 'xe^x'],
+        ['a^x', 'a^x/lna + C', 'a^x', 'ln(a)a^x'],
+        ['lnx', 'xln(x) - x', 'x-xln(x)', 'xln(x)']
+
+    ];
+
     var optionArr = new Array(5);
     var type = 0;
     var valA = 0;
     var valB = 0;
     var question;
     var randDerivArr = 0;
+    var randIntegArr = 0;
     var randOne = 0;
     var randTwo = 0;
-    type = Math.floor(Math.random() * 3);
+    type = Math.floor(Math.random() * 4);
     if (type == 0) {
         valA = -100 + Math.floor(Math.random() * 201);
         valB = -100 + Math.floor(Math.random() * 201);
@@ -100,9 +119,22 @@ function flowertime() {
         }
 
     } else {
-        valA = 1 + Math.floor(Math.random() * 10);
-        valB = 1 + Math.floor(Math.random() * 20);
-        question = "Integral of 1/" + valB + "*x^" + valA;
+        a = Math.floor(Math.random() * 10) + 1;
+        n = Math.floor(Math.random() * 10) + 1;
+        randIntegArr = Math.floor(Math.random() * 14);
+        question = "Integral of " + anti[randIntegArr][0];
+        indexCorr = 1 + Math.floor(Math.random() * 4);
+        optionArr[indexCorr] = anti[randIntegArr][1];
+        randOne = 0;
+        randTwo = indexCorr - 1;
+        optionArr[randOne] = anti[randIntegArr][2];
+        optionArr[randTwo] = anti[randIntegArr][3];
+        for (let i = 0; i < optionArr.length; i++) {
+            if (i != indexCorr && i != randOne && i != randTwo) {
+                var randNum = Math.floor(Math.random() * 14);
+                optionArr[i] = anti[randNum][2];
+            }
+        }
     }
 
     var questionDisp = document.getElementById("question");
